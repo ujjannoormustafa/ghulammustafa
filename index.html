@@ -81,6 +81,43 @@
                 background-repeat: no-repeat !important;
             }
         }
+
+        /* About Section Medal Badge */
+        @keyframes floatMedal {
+            0%, 100% {
+                transform: rotate(50deg) translateY(0px);
+            }
+            50% {
+                transform: rotate(50deg) translateY(-10px);
+            }
+        }
+
+        .about-medal-badge:hover img {
+            transform: scale(1.1) rotate(5deg);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .about-medal-badge {
+                top: 5px !important;
+                right: 10px !important;
+            }
+            .about-medal-badge img {
+                width: 100px !important;
+                height: 100px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-medal-badge {
+                top: 0px !important;
+                right: 5px !important;
+            }
+            .about-medal-badge img {
+                width: 80px !important;
+                height: 80px !important;
+            }
+        }
     </style>
     <title>Ghulam Mustafa Personal Portfolio </title>
 
@@ -110,7 +147,8 @@
                         <!-- <a class="nav-item nav-link ts-scroll" href="#my-services">Services</a> -->
                         <a class="nav-item nav-link ts-scroll" href="#about-me">About Me</a>
                         <a class="nav-item nav-link ts-scroll" href="#my-skills">Skills</a>
-                        <a class="nav-item nav-link ts-scroll" href="#portfolio">Portfolio</a>
+                        <a class="nav-item nav-link ts-scroll" href="#achievements">Achievements</a>
+                        <a class="nav-item nav-link ts-scroll" href="#certifications">Certifications</a>
                         <a class="nav-item nav-link ts-scroll mr-2" href="#contact">Contact</a>
                     </div>
                     <!--end navbar-nav-->
@@ -209,12 +247,18 @@
                     </div>
                     <!--end ts-title-->
                     <div class="row ts-align__vertical">
-                        <div class="col-md-6" style="display: flex; justify-content: center; align-items: center;">
+                        <div class="col-md-6" style="display: flex; justify-content: center; align-items: center; position: relative;">
                             <img src="assets/img/aboutG.jpg" alt="" class=" " style="width: 73%;">
+                           
                         </div>
                         <div class="col-md-6">
-                            <h4 class="ts-bubble-border">Hi There</h4>
-                            <p>
+                            <div class="d-flex align-items-start mb-4">
+                                <div style="flex: 1;">
+                                    <h4 class="ts-bubble-border mb-0">Hi There</h4>
+                                </div>
+                                <img src="assets/certificates/badge.png" alt="Badge" style="width: 90px;  margin-left: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); transform: rotate(50deg); flex-shrink: 0;">
+                            </div>
+                            <p style="margin-top: -20px;">
                                 I am a Robotics & Artificial Intelligence undergraduate, currently studying at BBSUTSD,
                                 Pakistan.
                                 I am actively working on Machine Learning, Deep Learning, and Embedded Systems projects.
@@ -257,19 +301,6 @@
                         </div>
                     </div>
                     <!--end row-->
-                </div>
-            </section>
-
-            <section class="ts-block">
-                <div class="container">
-                    <div class="text-center px-5 pt-5 position-relative">
-                        <h3 class="my-3">
-                            Let's Work Together On Your Next Project!
-                        </h3>
-                        <a href="#contact" class="btn btn-primary mr-2 ts-push-down__50 ts-has-talk-arrow">Hire Me
-                            Now!</a>
-                        <div class="ts-background ts-opacity__20" data-bg-image="assets/img/bg-keyboard.jpg"></div>
-                    </div>
                 </div>
             </section>
 
@@ -330,24 +361,387 @@
                 <!--end container-->
             </section>
 
-            <section class="ts-block pb-5" id="portfolio">
+            <!-- ACHIEVEMENTS SECTION -->
+            <section id="achievements" class="ts-block pb-4">
                 <div class="container">
-                    <div class="ts-title">
-                        <h2 class="text-center">Featured Projects</h2>
+                    <div class="ts-title text-center mb-5">
+                        <h2 style="font-size: 3rem; font-weight: bold; color: #28a745;">Achievement Gallery</h2>
                     </div>
-                    <div>
-                        <a href="https://huggingface.co/Ghmustafa11" target="_blank" class="mr-3 social-icon">
 
-                            <img src="assets/img/hugging.png" alt=""
-                                style="width: 100%; margin-bottom: 80px; border-radius: 8px;">
-                        </a>
+                    <!-- Achievement Gallery -->
+                    <div class="container-fluid px-5">
+                        <div class="achievement-gallery">
+                            <!-- Row 1 -->
+                            <div class="row mb-4">
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="achievement-img-card">
+                                        <a href="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.39 PM.jpeg" data-toggle="modal" data-target="#achievementModal" data-img="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.39 PM.jpeg">
+                                            <div class="achievement-img-overlay">
+                                                <i class="fa fa-search-plus fa-2x"></i>
+                                            </div>
+                                            <img src="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.39 PM.jpeg" alt="Achievement 1" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="achievement-img-card">
+                                        <a href="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.39 PM (1).jpeg" data-toggle="modal" data-target="#achievementModal" data-img="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.39 PM (1).jpeg">
+                                            <div class="achievement-img-overlay">
+                                                <i class="fa fa-search-plus fa-2x"></i>
+                                            </div>
+                                            <img src="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.39 PM (1).jpeg" alt="Achievement 2" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="achievement-img-card">
+                                        <a href="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.40 PM.jpeg" data-toggle="modal" data-target="#achievementModal" data-img="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.40 PM.jpeg">
+                                            <div class="achievement-img-overlay">
+                                                <i class="fa fa-search-plus fa-2x"></i>
+                                            </div>
+                                            <img src="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.40 PM.jpeg" alt="Achievement 3" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="achievement-img-card">
+                                        <a href="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.41 PM.jpeg" data-toggle="modal" data-target="#achievementModal" data-img="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.41 PM.jpeg">
+                                            <div class="achievement-img-overlay">
+                                                <i class="fa fa-search-plus fa-2x"></i>
+                                            </div>
+                                            <img src="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.41 PM.jpeg" alt="Achievement 4" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 2 -->
+                            <div class="row mb-4">
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="achievement-img-card">
+                                        <a href="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.42 PM.jpeg" data-toggle="modal" data-target="#achievementModal" data-img="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.42 PM.jpeg">
+                                            <div class="achievement-img-overlay">
+                                                <i class="fa fa-search-plus fa-2x"></i>
+                                            </div>
+                                            <img src="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.42 PM.jpeg" alt="Achievement 5" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="achievement-img-card">
+                                        <a href="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.42 PM (1).jpeg" data-toggle="modal" data-target="#achievementModal" data-img="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.42 PM (1).jpeg">
+                                            <div class="achievement-img-overlay">
+                                                <i class="fa fa-search-plus fa-2x"></i>
+                                            </div>
+                                            <img src="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.42 PM (1).jpeg" alt="Achievement 6" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="achievement-img-card">
+                                        <a href="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.43 PM.jpeg" data-toggle="modal" data-target="#achievementModal" data-img="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.43 PM.jpeg">
+                                            <div class="achievement-img-overlay">
+                                                <i class="fa fa-search-plus fa-2x"></i>
+                                            </div>
+                                            <img src="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.43 PM.jpeg" alt="Achievement 7" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="achievement-img-card">
+                                        <a href="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.43 PM (1).jpeg" data-toggle="modal" data-target="#achievementModal" data-img="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.43 PM (1).jpeg">
+                                            <div class="achievement-img-overlay">
+                                                <i class="fa fa-search-plus fa-2x"></i>
+                                            </div>
+                                            <img src="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.43 PM (1).jpeg" alt="Achievement 8" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="achievement-img-card">
+                                        <a href="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.43 PM (2).jpeg" data-toggle="modal" data-target="#achievementModal" data-img="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.43 PM (2).jpeg">
+                                            <div class="achievement-img-overlay">
+                                                <i class="fa fa-search-plus fa-2x"></i>
+                                            </div>
+                                            <img src="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.43 PM (2).jpeg" alt="Achievement 9" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                    <div class="achievement-img-card">
+                                        <a href="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.44 PM.jpeg" data-toggle="modal" data-target="#achievementModal" data-img="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.44 PM.jpeg">
+                                            <div class="achievement-img-overlay">
+                                                <i class="fa fa-search-plus fa-2x"></i>
+                                            </div>
+                                            <img src="assets/certificates/achievements/WhatsApp Image 2025-12-29 at 4.12.44 PM.jpeg" alt="Achievement 10" class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Modal for video playback -->
-
             </section>
-            <!--end portfolio-->
+
+            <!-- CERTIFICATIONS SECTION -->
+            <section id="certifications" class="ts-block pb-5" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+                <div class="container-fluid px-5">
+                    <div class="ts-title text-center mb-5">
+                        <h2 class="text-white">Certifications</h2>
+                    </div>
+                    
+                    <!-- Certificate Gallery -->
+                    <div class="certificate-gallery-dark">
+                        <!-- Row 1: 3 Certificates -->
+                        <div class="row mb-4">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="certificate-card-dark">
+                                    <a href="assets/certificates/WhatsApp Image 2025-12-29 at 4.06.10 PM.jpeg" class="certificate-link" data-toggle="modal" data-target="#certModal" data-img="assets/certificates/WhatsApp Image 2025-12-29 at 4.06.10 PM.jpeg">
+                                        <div class="certificate-overlay-dark">
+                                            <i class="fa fa-search-plus fa-3x"></i>
+                                            <p class="mt-3">View Certificate</p>
+                                        </div>
+                                        <img src="assets/certificates/WhatsApp Image 2025-12-29 at 4.06.10 PM.jpeg" alt="Certificate 1" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="certificate-card-dark">
+                                    <a href="assets/certificates/WhatsApp Image 2025-12-29 at 4.06.10 PM (1).jpeg" class="certificate-link" data-toggle="modal" data-target="#certModal" data-img="assets/certificates/WhatsApp Image 2025-12-29 at 4.06.10 PM (1).jpeg">
+                                        <div class="certificate-overlay-dark">
+                                            <i class="fa fa-search-plus fa-3x"></i>
+                                            <p class="mt-3">View Certificate</p>
+                                        </div>
+                                        <img src="assets/certificates/WhatsApp Image 2025-12-29 at 4.06.10 PM (1).jpeg" alt="Certificate 2" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="certificate-card-dark">
+                                    <a href="assets/certificates/WhatsApp Image 2025-12-29 at 4.06.11 PM.jpeg" class="certificate-link" data-toggle="modal" data-target="#certModal" data-img="assets/certificates/WhatsApp Image 2025-12-29 at 4.06.11 PM.jpeg">
+                                        <div class="certificate-overlay-dark">
+                                            <i class="fa fa-search-plus fa-3x"></i>
+                                            <p class="mt-3">View Certificate</p>
+                                        </div>
+                                        <img src="assets/certificates/WhatsApp Image 2025-12-29 at 4.06.11 PM.jpeg" alt="Certificate 3" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Row 2: 2 Certificates centered -->
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="certificate-card-dark">
+                                    <a href="assets/certificates/WhatsApp Image 2025-12-29 at 4.03.43 PM.jpeg" class="certificate-link" data-toggle="modal" data-target="#certModal" data-img="assets/certificates/WhatsApp Image 2025-12-29 at 4.03.43 PM.jpeg">
+                                        <div class="certificate-overlay-dark">
+                                            <i class="fa fa-search-plus fa-3x"></i>
+                                            <p class="mt-3">View Certificate</p>
+                                        </div>
+                                        <img src="assets/certificates/WhatsApp Image 2025-12-29 at 4.03.43 PM.jpeg" alt="Certificate 4" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="certificate-card-dark">
+                                    <a href="assets/certificates/WhatsApp Image 2025-12-29 at 4.03.44 PM.jpeg" class="certificate-link" data-toggle="modal" data-target="#certModal" data-img="assets/certificates/WhatsApp Image 2025-12-29 at 4.03.44 PM.jpeg">
+                                        <div class="certificate-overlay-dark">
+                                            <i class="fa fa-search-plus fa-3x"></i>
+                                            <p class="mt-3">View Certificate</p>
+                                        </div>
+                                        <img src="assets/certificates/WhatsApp Image 2025-12-29 at 4.03.44 PM.jpeg" alt="Certificate 5" class="img-fluid">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                /* Featured Medal Card */
+                .featured-medal-card {
+                    transition: all 0.4s ease;
+                }
+                .featured-medal-card:hover {
+                    transform: translateY(-15px) scale(1.05);
+                    box-shadow: 0 20px 60px rgba(255, 215, 0, 0.6) !important;
+                }
+                .medal-img-container {
+                    transition: transform 0.3s ease;
+                }
+                .featured-medal-card:hover .medal-img-container {
+                    transform: rotate(5deg) scale(1.05);
+                }
+
+                /* Achievement Cards */
+                .achievement-card {
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                .achievement-card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.4) !important;
+                }
+
+                /* Achievement Image Gallery */
+                .achievement-img-card {
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 15px;
+                    box-shadow: 0 5px 20px rgba(40, 167, 69, 0.3);
+                    transition: all 0.3s ease;
+                    background: #fff;
+                    border: 2px solid #28a745;
+                }
+                .achievement-img-card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 15px 40px rgba(40, 167, 69, 0.5);
+                    border-color: #22c55e;
+                }
+                .achievement-img-card img {
+                    width: 100%;
+                    height: 250px;
+                    object-fit: cover;
+                    display: block;
+                    transition: transform 0.3s ease;
+                }
+                .achievement-img-card:hover img {
+                    transform: scale(1.1);
+                }
+                .achievement-img-card a {
+                    display: block;
+                    position: relative;
+                    text-decoration: none;
+                }
+                .achievement-img-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(135deg, rgba(40, 167, 69, 0.9) 0%, rgba(34, 197, 94, 0.9) 100%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    z-index: 2;
+                    color: #fff;
+                }
+                .achievement-img-card:hover .achievement-img-overlay {
+                    opacity: 1;
+                }
+
+                /* Certificate Gallery - Dark Mode */
+                .certificate-card-dark {
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 20px;
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+                    transition: all 0.4s ease;
+                    background: #0f3460;
+                    border: 3px solid #28a745;
+                }
+                .certificate-card-dark:hover {
+                    transform: translateY(-15px) scale(1.02);
+                    box-shadow: 0 20px 60px rgba(40, 167, 69, 0.4), 0 0 30px rgba(40, 167, 69, 0.3);
+                    border-color: #00f2fe;
+                }
+                .certificate-card-dark img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    transition: transform 0.4s ease, filter 0.4s ease;
+                }
+                .certificate-card-dark:hover img {
+                    transform: scale(1.1);
+                    filter: brightness(1.1);
+                }
+                .certificate-link {
+                    display: block;
+                    position: relative;
+                    text-decoration: none;
+                }
+                .certificate-overlay-dark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(135deg, rgba(40, 167, 69, 0.9) 0%, rgba(0, 242, 254, 0.9) 100%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+                    transition: opacity 0.4s ease;
+                    z-index: 2;
+                    color: #fff;
+                }
+                .certificate-card-dark:hover .certificate-overlay-dark {
+                    opacity: 1;
+                }
+                .certificate-overlay-dark p {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    margin: 0;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+            </style>
+
+            <!-- Certificate Modal -->
+            <div class="modal fade" id="certModal" tabindex="-1" role="dialog" aria-labelledby="certModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content bg-transparent border-0">
+                        <div class="modal-body p-0 position-relative" style="min-height: 400px;">
+                            <button type="button" class="close position-absolute" style="top: 10px; right: 20px; z-index: 10; color: #fff; font-size: 3rem; opacity: 1; text-shadow: 0 0 10px rgba(0,0,0,0.5);" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div id="certLoading" class="text-center" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                <i class="fa fa-spinner fa-spin fa-3x text-white"></i>
+                                <p class="text-white mt-3">Loading certificate...</p>
+                            </div>
+                            <img src="" id="modalCertImg" class="img-fluid w-100" style="border-radius: 10px; max-height: 90vh; object-fit: contain; display: none;" alt="Certificate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievement Modal -->
+            <div class="modal fade" id="achievementModal" tabindex="-1" role="dialog" aria-labelledby="achievementModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content bg-transparent border-0">
+                        <div class="modal-body p-0 position-relative" style="min-height: 400px;">
+                            <button type="button" class="close position-absolute" style="top: 10px; right: 20px; z-index: 10; color: #fff; font-size: 3rem; opacity: 1; text-shadow: 0 0 10px rgba(0,0,0,0.5);" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <div id="achievementLoading" class="text-center" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                                <i class="fa fa-spinner fa-spin fa-3x text-white"></i>
+                                <p class="text-white mt-3">Loading achievement...</p>
+                            </div>
+                            <img src="" id="modalAchievementImg" class="img-fluid w-100" style="border-radius: 10px; max-height: 90vh; object-fit: contain; display: none;" alt="Achievement">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="ts-block">
+                <div class="container">
+                    <div class="text-center px-5 pt-5 position-relative">
+                        <h3 class="my-3">
+                            Let's Work Together On Your Next Project!
+                        </h3>
+                        <a href="#contact" class="btn btn-primary mr-2 ts-push-down__50 ts-has-talk-arrow">Hire Me
+                            Now!</a>
+                        <div class="ts-background ts-opacity__20" data-bg-image="assets/img/bg-keyboard.jpg"></div>
+                    </div>
+                </div>
+            </section>
 
             <section class="ts-block position-relative" data-bg-image="assets/img/analytics.jpeg">
                 <div class="black-overlay"></div>
@@ -634,6 +1028,106 @@
     <script src="assets/js/odometer.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/custom.js"></script>
+
+    <!-- Certificate Modal Script -->
+    <script>
+        $(document).ready(function() {
+            // Handle certificate modal show event
+            $('#certModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Element that triggered the modal
+                var imgSrc = button.attr('data-img') || button.closest('a').attr('data-img'); // Get image source
+                
+                if (imgSrc) {
+                    console.log('Loading certificate image:', imgSrc);
+                    
+                    // Show loading, hide image
+                    $('#certLoading').show();
+                    $('#modalCertImg').hide();
+                    
+                    // Create a new image object to preload
+                    var img = new Image();
+                    
+                    img.onload = function() {
+                        console.log('Image loaded successfully');
+                        // Image loaded successfully
+                        $('#modalCertImg').attr('src', imgSrc).show();
+                        $('#certLoading').hide();
+                    };
+                    
+                    img.onerror = function() {
+                        console.error('Error loading image:', imgSrc);
+                        // Error loading image
+                        $('#certLoading').html('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><p class="text-white mt-3">Error loading certificate</p>');
+                    };
+                    
+                    // Start loading the image
+                    img.src = imgSrc;
+                } else {
+                    console.error('No image source found');
+                }
+            });
+
+            // Clear image when certificate modal closes
+            $('#certModal').on('hidden.bs.modal', function () {
+                $('#modalCertImg').attr('src', '').hide();
+                $('#certLoading').hide();
+            });
+
+            // Also handle direct clicks on certificate links
+            $('.certificate-link').on('click', function(e) {
+                var hasModal = $(this).attr('data-toggle') === 'modal';
+                if (!hasModal) {
+                    e.preventDefault();
+                    var imgSrc = $(this).attr('data-img');
+                    if (imgSrc) {
+                        $(this).attr('data-toggle', 'modal').attr('data-target', '#certModal');
+                        $('#certModal').modal('show');
+                    }
+                }
+            });
+
+            // Handle achievement modal show event
+            $('#achievementModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Element that triggered the modal
+                var imgSrc = button.attr('data-img') || button.closest('a').attr('data-img'); // Get image source
+                
+                if (imgSrc) {
+                    console.log('Loading achievement image:', imgSrc);
+                    
+                    // Show loading, hide image
+                    $('#achievementLoading').show();
+                    $('#modalAchievementImg').hide();
+                    
+                    // Create a new image object to preload
+                    var img = new Image();
+                    
+                    img.onload = function() {
+                        console.log('Achievement image loaded successfully');
+                        // Image loaded successfully
+                        $('#modalAchievementImg').attr('src', imgSrc).show();
+                        $('#achievementLoading').hide();
+                    };
+                    
+                    img.onerror = function() {
+                        console.error('Error loading achievement image:', imgSrc);
+                        // Error loading image
+                        $('#achievementLoading').html('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><p class="text-white mt-3">Error loading achievement</p>');
+                    };
+                    
+                    // Start loading the image
+                    img.src = imgSrc;
+                } else {
+                    console.error('No achievement image source found');
+                }
+            });
+
+            // Clear image when achievement modal closes
+            $('#achievementModal').on('hidden.bs.modal', function () {
+                $('#modalAchievementImg').attr('src', '').hide();
+                $('#achievementLoading').hide();
+            });
+        });
+    </script>
 
 </body>
 
