@@ -1,2 +1,0 @@
-# portfar-nextjs
- react next
